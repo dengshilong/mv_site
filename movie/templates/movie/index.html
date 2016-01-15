@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+    {% if posts %}
+        {% for post in posts %}
+            <div class="post">
+                <div class="post-info">
+                    <a href="{{ post.get_absolute_url }}"><h2>{{post.title}}------{{post.author}}</h2></a>
+                </div>
+            </div>
+        {% endfor %}
+        <div id="pagination">
+            {% for pagenum in posts.paginator.page_range %}
+                {{ page.number }}
+                {% if posts.number == pagenum %}
+                    <a id="current" href="?page={{ pagenum }}"> {{ pagenum }} </a>
+                {% else %}
+                    <a href="?page={{ pagenum }}"> {{ pagenum }} </a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>no posts </p>
+    {% endif %}
+    
+{% endblock %}
