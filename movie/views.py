@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Post
-from .utils import get_page
+from .utils import get_page,prev_next_post
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 def index(request):
@@ -17,4 +17,5 @@ def index(request):
     return render(request, 'movie/index.html', context)
 def post(request, id):
     post = get_object_or_404(Post, pk=id)
-    return render(request, 'movie/post.html', {'post': post})
+    prev_post,next_post = prev_next_post(id)
+    return render(request, 'movie/post.html', {'post':post, 'prev_post': prev_post, 'next_post':next_post})

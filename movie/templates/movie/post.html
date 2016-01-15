@@ -1,5 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
+     <div id="next_and_prev">
+        <span id="prev">
+        {% if prev_post %}
+            prev:&nbsp;<a href="{{ prev_post.get_absolute_url }}">{{ prev_post.title }}</a>
+        {% else %}
+           已经是第一首了
+        {% endif %}
+        </span>
+        <span id="next">
+        {% if next_post %} 
+            next:&nbsp;<a href="{{ next_post.get_absolute_url }}">{{ next_post.title }}</a>
+        {% else %}
+            已经是最后一首了
+        {% endif %}
+        </span>
+    </div>
 {% autoescape off %}
     <div class="post-title">
         <h1> {{ post.title }}</h1>

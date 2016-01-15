@@ -1,0 +1,56 @@
+body {
+    background: #606060;
+    color : #fff;
+} 
+a {
+    text-decoration : none;
+    color : #fff;
+}
+#container {
+    margin : auto;
+    width : 70%;
+}
+#content {
+    margin :  0px auto 50px;
+}
+#site_name {
+    font-size: 3em;
+}
+#pagination {
+    margin: auto;
+}
+#pagination a{
+    display:block;
+    width:20px;
+    padding : 2px;
+    margin: 0 5px 0 0;
+    float:left;
+    background-color:#808080;
+    text-align : center;
+}
+#pagination a:hover {
+    background-color: #ff6600;
+}
+
+#pagination #current{
+    background-color: #ff6600;
+}
+
+#next_and_prev{
+    position: relative;
+}
+#next {
+    position: absolute;
+    right: 20px;
+}
+#footer {
+    margin:0 auto;
+    padding: 7px 0;
+    position: relative;
+    font-size:1em;
+}
+#footer #to_top {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
