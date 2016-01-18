@@ -1,4 +1,7 @@
 from django.contrib import admin
 # Register your models here.
 from .models import Post
-admin.site.register(Post)
+from .forms import PostForm
+class PostAdmin(admin.ModelAdmin):
+    form = PostForm
+admin.site.register(Post, PostAdmin)
