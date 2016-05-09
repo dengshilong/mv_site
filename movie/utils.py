@@ -18,3 +18,7 @@ def prev_next_post(id):
     except:
         next_post = None
     return prev_post,next_post
+
+def get_image_path(filename):
+    path =  datetime.now().strftime("/%Y/%m/%d")
+    return os.path.join(path, filename)
